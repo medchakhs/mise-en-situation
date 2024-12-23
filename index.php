@@ -26,8 +26,13 @@
 }
 ?>
 <?php
- include('cnxDB.php');
- 
+        include('cnxDB.php');
+        $nome = $_GET['nome'];
+        $query = "SELECT * FROM `role` WHERE `nome` = '$nome' ";
+        $result = mysqli_query($conn,$query);
+        $row = mysqli_fetch_assoc($result);
+        // print_r($row);
+
 ?>
 
     <form method="POST" >
